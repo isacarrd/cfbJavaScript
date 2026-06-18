@@ -1,11 +1,12 @@
 // Exercício 3.1: Média Escolar Dinâmica
+// GEMINI: colocar o resultado depois do loop forOf
 /* function calcularMediaAluno(nome, ...valores) {
   let media = 0
   let resultado = 0
   for(let val of valores) {
     media += val
-    resultado = media/valores.length
   }
+  resultado = media/valores.length
   return `O aluno ${nome} teve média ${resultado}`
 }
 console.log(calcularMediaAluno("Carlos", 8, 9, 7)) */
