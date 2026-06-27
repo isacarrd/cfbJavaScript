@@ -29,14 +29,15 @@ const meuContador = criarContador()
 console.log(meuContador(), meuContador()) */
 
 /* // Exercício 2.4: Validador de Senhas com Tamanho Flexível
+// GEMINI: não precisa necessáriamente do operador ternário pois ele já retorna true ou false!
 const criarValidadorSenha = (tamanhoMinimo) => {
   return function (senha) {
     return senha.length >= tamanhoMinimo ? true : false
   }
 }
 const validarOitoChars = criarValidadorSenha(8);
-console.log(validarOitoChars("12345")) */
-
+console.log(validarOitoChars("12345"))
+ */
 /* // Exercício 2.5: Formatador de Moedas
 const definirMoeda = (simbMoeda) => {
   return function (valor) {
