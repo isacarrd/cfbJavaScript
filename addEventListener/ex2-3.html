@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 2.3</title>
+</head>
+
+<body>
+  <h1>Interações de Mouse (Hover)</h1>
+  <div id="caixa">Passe o mouse</div>
+  <script>
+    const caixa = document.getElementById("caixa")
+    caixa.addEventListener("mouseenter", () => {
+      caixa.style.backgroundColor = "green"
+    })
+    caixa.addEventListener("mouseleave", () => {
+      caixa.style.backgroundColor = "inherit"
+    })
+  </script>
+</body>
+
+</html>
