@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3.2</title>
+</head>
+<body>
+  <h1>Menu Dropdown e o Body</h1>
+  <div id="menu-usuario">Menu</div>
+  <script>
+    const menu = document.getElementById('menu-usuario')
+    document.body.addEventListener("click", ()=>{
+      console.log("Fechando todos os menus")
+    })
+    menu.addEventListener("click", (evt)=>{
+      evt.stopPropagation()
+      console.log("Abrindo opções do usuário")
+    })
+  </script>
+</body>
+</html>

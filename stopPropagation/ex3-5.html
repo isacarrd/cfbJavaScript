@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3.5</title>
+</head>
+
+<body>
+  <h1>Duplo Stop (Prevenção Total)</h1>
+  <a href="https://google.com" id="link-especial">
+    <div>Clique aqui</div>
+  </a>
+  <script>
+
+/*     // GEMINI: está correto, mas era pra capturar o clique especificamente na <div> interna para impedir que ele subisse até o link <a>, ou seja:
+    const divInterna = document.querySelector('#link-especial div')
+
+    divInterna.addEventListener("click", (evt) => {
+      evt.preventDefault()
+      evt.stopPropagation()
+      console.log("Ação completamente neutralizada")
+    }) */
+
+    const link = document.getElementById('link-especial')
+    link.addEventListener("click", (evt) => {
+      evt.preventDefault()
+      evt.stopPropagation()
+      console.log("Ação completamente neutralizada")
+    })
+  </script>
+</body>
+
+</html>

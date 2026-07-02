@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3.3</title>
+</head>
+
+<body>
+  <h1>Lista de Tarefas (Concluir vs Deletar)</h1>
+  <ul>
+    <li id="tarefa">Comprar pão
+      <button id="btn-deletar">Apagar</button>
+    </li>
+  </ul>
+  <script>
+    const tarefa = document.getElementById('tarefa')
+    const btnDeletar = document.getElementById('btn-deletar')
+    tarefa.addEventListener("click", ()=>{
+      console.log("Tarefa marcada como concluída")
+    })
+    btnDeletar.addEventListener("click", (evt)=>{
+      evt.stopPropagation()
+      console.log("Tarefa apagada")
+    })
+  </script>
+</body>
+
+</html>

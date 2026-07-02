@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3.4</title>
+</head>
+<body>
+  <h1>Cartão de Produto Expandido</h1>
+  <article id="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWUv2zPB2x3BQ7szxYDjAh5fjcs4ut3HkDA2oTCVK35C7HF1mJOZt4qE8&s=10" alt="" id="foto-produto">
+  </article>
+  <script>
+    const card = document.getElementById('card')
+    const img = document.getElementById('foto-produto')
+    card.addEventListener("click", ()=>{
+      console.log("Navegando para a página do produto")
+    })
+    img.addEventListener("click", (evt)=>{
+      evt.stopPropagation()
+      console.log("Abrindo galeria de fotos em tela cheia")
+    })
+  </script>
+</body>
+</html>
