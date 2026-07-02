@@ -569,7 +569,7 @@ Aqui está a sua **Lista 4**:
 
 **Exercício 4.5: Busca com Escopo Fechado (`elemento.querySelector`)**
 
-* **Situação Problema:** Crie dois artigos: `<article class="post 1"><p class="resumo">A</p></article>` e `<article class="post 2"><p class="resumo">B</p></article>`. No JS, selecione explicitamente o **segundo artigo**. Depois, em vez de usar `document.querySelector`, use o `.querySelector` a partir do artigo selecionado para encontrar o parágrafo `.resumo` apenas de dentro dele, alterando seu texto para `"Resumo atualizado"`.
+* **Situação Problema:** Crie dois artigos: `<article class="post-1"><p class="resumo">A</p></article>` e `<article class="post-2"><p class="resumo">B</p></article>`. No JS, selecione explicitamente o **segundo artigo**. Depois, em vez de usar `document.querySelector`, use o `.querySelector` a partir do artigo selecionado para encontrar o parágrafo `.resumo` apenas de dentro dele, alterando seu texto para `"Resumo atualizado"`.
 * **Ação:** Executar o script.
 * **Resposta Esperada:** Apenas a letra "B" vira "Resumo atualizado", o primeiro post permanece intacto.
 
