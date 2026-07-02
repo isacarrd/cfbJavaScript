@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 4.1</title>
+</head>
+
+<body>
+  <h1>Subindo para o Pai (parentNode / parentElement)</h1>
+  <div class="alerta">
+    <span id="fechar-alerta">X</span>
+  </div>
+  <script>
+    const span = document.getElementById('fechar-alerta')
+    console.log(span.parentElement)
+    // console.log(span.parentNode)
+    span.parentNode.style.display = "none"
+  </script>
+</body>
+
+</html>
