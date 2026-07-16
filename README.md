@@ -427,19 +427,7 @@ Lista {numero da lista}, 5 exercícios de cada:
 
 ---
 
-Que excelente progresso! Chegar à manipulação do DOM e ao entendimento do contexto de execução mostra que você está entrando em um nível bem mais avançado do JavaScript.
-
-Apenas um pequeno detalhe técnico antes de começarmos: em JavaScript, a palavra-chave é apenas **`this`** (sem o ponto antes). O `this` é um dos conceitos que mais gera confusão em quem está aprendendo, pois o valor dele muda dependendo de *quem* e *onde* a função está sendo chamada.
-
-Como os tópicos 2, 3 e 4 lidam com a interface da página, **você precisará criar um arquivo `index.html` simples** contendo os elementos descritos nos exercícios para conseguir testar os seus scripts no navegador!
-
-Aqui está a sua **Lista 4**:
-
----
-
 ### O Contexto de Execução (`this`)
-
-*Foco: Entender como o `this` se comporta em objetos, classes e funções.*
 
 **Exercício 1.1: O Método do Objeto**
 
@@ -474,8 +462,6 @@ Aqui está a sua **Lista 4**:
 ---
 
 ### Eventos com `addEventListener()`
-
-*Foco: Escutar e reagir a interações do usuário na tela.*
 
 **Exercício 2.1: Clique Simples**
 
@@ -573,4 +559,143 @@ Aqui está a sua **Lista 4**:
 * **Ação:** Executar o script.
 * **Resposta Esperada:** Apenas a letra "B" vira "Resumo atualizado", o primeiro post permanece intacto.
 
+
 ---
+
+### Criando Elementos (`document.createElement`)
+
+**Exercício 1.1: O Primeiro Parágrafo**
+
+* **Situação Problema:** Crie um arquivo HTML com uma `<div id="conteudo"></div>`. No JS, use `document.createElement` para criar uma tag `<p>`. Adicione o texto `"Olá, DOM!"` a esse parágrafo (usando `innerText` ou `textContent`) e, por fim, adicione esse parágrafo para dentro da div usando `.appendChild()`.
+* **Ação:** Carregar a página.
+* **Resposta Esperada:** O texto "Olá, DOM!" aparece na tela dentro da div.
+
+**Exercício 1.2: Lista Dinâmica**
+
+* **Situação Problema:** No HTML, crie uma `<ul id="lista-tarefas"></ul>`. No JS, crie um elemento `<li>`, adicione o texto `"Estudar JavaScript"` e insira-o dentro da `ul`.
+* **Ação:** Carregar a página.
+* **Resposta Esperada:** Um item de lista com o texto "Estudar JavaScript" é renderizado.
+
+**Exercício 1.3: Inserindo uma Imagem**
+
+* **Situação Problema:** Crie uma `<div id="galeria"></div>`. No JS, crie um elemento `<img>`. Usando as propriedades do elemento no JS, defina o `src` dele para uma URL de imagem qualquer da internet e o `alt` para `"Foto dinâmica"`. Insira a imagem na galeria.
+* **Ação:** Carregar a página.
+* **Resposta Esperada:** A imagem é exibida na tela.
+
+**Exercício 1.4: Botão com Classe CSS**
+
+* **Situação Problema:** No JS, crie um elemento `<button>`. Adicione o texto `"Clique Aqui"` e adicione a classe CSS `"btn-primario"` a ele (usando `classList.add`). Adicione o botão ao `document.body`.
+* **Ação:** Inspecionar o elemento no navegador (F12).
+* **Resposta Esperada:** O HTML gerado deve ser `<button class="btn-primario">Clique Aqui</button>`.
+
+**Exercício 1.5: Construindo um Mini-Card (Aninhamento)**
+
+* **Situação Problema:** Crie um `<article id="card-usuario"></div>`. No JS, crie um `<h2>` com o texto `"João Silva"` e um `<p>` com o texto `"Dev Front-end"`. Adicione **ambos** os elementos para dentro do `article`.
+* **Ação:** Carregar a página.
+* **Resposta Esperada:** O card exibe o título e o parágrafo agrupados.
+
+---
+
+### Removendo Filhos (`removeChild`)
+
+**Exercício 2.1: Apagando um Item Específico**
+
+* **Situação Problema:** Crie o HTML: `<ul id="menu"><li id="item-1">Home</li><li id="item-2">Contato</li></ul>`. No JS, selecione a `ul` (o pai) e o `li` de Contato (o filho). Use `pai.removeChild(filho)` para deletar o contato.
+* **Ação:** Executar o script.
+* **Resposta Esperada:** Apenas a opção "Home" permanece na tela.
+
+**Exercício 2.2: Removendo o Primeiro Filho**
+
+* **Situação Problema:** Crie uma `<div id="caixa-mensagens"><p>Msg 1</p><p>Msg 2</p></div>`. No JS, selecione a div pai. Use a propriedade `firstElementChild` para identificar o primeiro parágrafo e remova-o usando `removeChild()`.
+* **Ação:** Executar o script.
+* **Resposta Esperada:** Apenas a "Msg 2" permanece na tela.
+
+**Exercício 2.3: Removendo o Último Filho**
+
+* **Situação Problema:** Usando a mesma estrutura do exercício anterior (ou uma similar), selecione o pai e use a propriedade `lastElementChild` para identificar e remover o **último** elemento da lista com `removeChild()`.
+* **Ação:** Executar o script.
+* **Resposta Esperada:** O último elemento desaparece.
+
+**Exercício 2.4: Botão de Limpar Lista**
+
+* **Situação Problema:** Crie uma `<ol id="ranking"><li>1º Lugar</li><li>2º Lugar</li></ol>` e um `<button id="btn-limpar">Limpar</button>`. Adicione um evento de clique ao botão. Quando clicado, selecione o `ranking` e remova o `firstElementChild` dele.
+* **Ação:** Clicar no botão limpar uma vez.
+* **Resposta Esperada:** O "1º Lugar" é removido da lista.
+
+**Exercício 2.5: Esvaziamento Completo (Loop)**
+
+* **Situação Problema:** Crie uma `<div id="carrinho"><p>Item A</p><p>Item B</p><p>Item C</p></div>`. No JS, crie um loop `while` que verifique se o carrinho ainda possui um `firstElementChild`. Enquanto possuir, use `removeChild()` para apagá-lo.
+* **Ação:** Executar o script.
+* **Resposta Esperada:** A div ficará completamente vazia no HTML.
+
+---
+
+### Método `.filter()`
+
+*Foco: Criar novos arrays baseados em condições lógicas, sem alterar o array original. Não precisa de HTML para este tópico.*
+
+**Exercício 3.1: Apenas os Positivos**
+
+* **Situação Problema:** Dado o array `const numeros = [-5, 10, -2, 42, 0]`, use o `.filter()` para retornar um novo array contendo apenas os números maiores que zero.
+* **Teste:** `console.log(numerosPositivos)`
+* **Resposta Esperada:** `[10, 42]`
+
+**Exercício 3.2: Nomes Curtos**
+
+* **Situação Problema:** Dado o array `const nomes = ["Ana", "Fernando", "Bia", "Guilherme"]`, use `.filter()` para gerar um array apenas com os nomes que tenham **3 letras ou menos**.
+* **Teste:** `console.log(nomesCurtos)`
+* **Resposta Esperada:** `["Ana", "Bia"]`
+
+**Exercício 3.3: Produtos em Estoque**
+
+* **Situação Problema:** Você tem uma lista de produtos:
+`const estoque = [{nome: "Caderno", qtd: 5}, {nome: "Caneta", qtd: 0}, {nome: "Borracha", qtd: 10}]`.
+Use `.filter()` para retornar apenas os objetos que possuem `qtd` maior que 0.
+* **Teste:** `console.log(produtosDisponiveis)`
+* **Resposta Esperada:** `[{nome: "Caderno", qtd: 5}, {nome: "Borracha", qtd: 10}]`
+
+**Exercício 3.4: Usuários Premium**
+
+* **Situação Problema:** Dado o array `const usuarios = [{id: 1, plano: "free"}, {id: 2, plano: "premium"}, {id: 3, plano: "premium"}]`. Filtre esse array para retornar apenas os usuários que assinam o plano "premium".
+* **Teste:** `console.log(usuariosPremium)`
+* **Resposta Esperada:** `[{id: 2, plano: "premium"}, {id: 3, plano: "premium"}]`
+
+**Exercício 3.5: Sistema de Busca Simples**
+
+* **Situação Problema:** Dado um array de linguagens `const linguagens = ["JavaScript", "Python", "Java", "C++", "TypeScript"]`. Crie uma variável `termoBusca = "Java"`. Use o `.filter()` combinado com o método `.includes()` das strings para retornar as linguagens que contenham a palavra "Java".
+* **Teste:** `console.log(resultadoBusca)`
+* **Resposta Esperada:** `["JavaScript", "Java"]`
+
+---
+
+### Removendo Diretamente (`.remove()`)
+
+**Exercício 4.1: O Botão Autodestrutivo**
+
+* **Situação Problema:** Crie um `<button id="btn-sumir">Me apague</button>`. Adicione um evento de clique nele. Dentro do evento, use o próprio contexto ou a variável do botão e chame `.remove()`.
+* **Ação:** Clicar no botão.
+* **Resposta Esperada:** O botão desaparece da tela instantaneamente.
+
+**Exercício 4.2: Fechando um Alerta**
+
+* **Situação Problema:** Crie uma `<div id="alerta">Erro na rede! <button id="fechar">X</button></div>`. No JS, capture o botão e a div. Ao clicar no botão, chame a função `.remove()` diretamente na variável da `div`.
+* **Ação:** Clicar no "X".
+* **Resposta Esperada:** O alerta inteiro desaparece.
+
+**Exercício 4.3: Destruição Temporizada**
+
+* **Situação Problema:** Crie um `<div id="toast">Operação realizada com sucesso!</div>`. No JS, selecione essa div e crie um `setTimeout`. Após 3 segundos (3000ms), o código deve executar `.remove()` na div.
+* **Ação:** Aguardar 3 segundos após carregar a página.
+* **Resposta Esperada:** O aviso de sucesso some sozinho da tela.
+
+**Exercício 4.4: Removendo Elementos por Classe (NodeList)**
+
+* **Situação Problema:** Crie `<p class="anuncio">Compre agora</p>`, `<p class="conteudo">Notícia real</p>` e `<p class="anuncio">Promoção</p>`. No JS, use `document.querySelectorAll('.anuncio')` para capturar todos os anúncios. Como isso retorna uma lista, você não pode usar o `.remove()` diretamente na lista. Use um `.forEach()` para percorrer a lista e aplicar o `.remove()` em cada item.
+* **Ação:** Executar o script.
+* **Resposta Esperada:** Apenas o parágrafo "Notícia real" sobrevive.
+
+**Exercício 4.5: Delegação com `.target` e `.remove()`**
+
+* **Situação Problema:** Crie uma `<ul id="lista-clicavel"><li>Item A</li><li>Item B</li></ul>`. Adicione um evento de clique na `ul`. Dentro do evento, verifique se o que foi clicado (`event.target.tagName`) foi uma `"LI"`. Se sim, aplique `.remove()` diretamente no `event.target`. *(Esta é uma técnica avançada e muito útil!)*
+* **Ação:** Clicar na palavra "Item A".
+* **Resposta Esperada:** Apenas o "Item A" some da tela. A `ul` continua existindo para receber novos cliques.
