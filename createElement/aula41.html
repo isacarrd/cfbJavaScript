@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>createElement</title>
+</head>
+<style>
+  #cursos{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card{
+    background-color: rgb(141, 141, 194);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+  }
+</style>
+<body>
+  <div id="cursos">
+    <!-- Elementos -->
+  </div>
+
+  <script>
+    const divCursos = document.getElementById('cursos')
+    const cursos = ["HTML", "CSS", "NODEJS", "JAVASCRIPT", "MYSQL", "REACT", "PHP"]
+
+    cursos.map((ele, index) =>{
+      const cardCursos = document.createElement('div')
+      cardCursos.setAttribute('class', 'card')
+      cardCursos.setAttribute('id', "c"+index)
+      cardCursos.innerText = ele
+      divCursos.appendChild(cardCursos)
+    })
+
+  </script>
+</body>
+</html>
