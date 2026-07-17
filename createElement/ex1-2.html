@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 1.2</title>
+</head>
+<body>
+  <h1>Lista Dinâmica</h1>
+  <ul id="listaTarefas">
+
+  </ul>
+  <script>
+    const listaTarefas = document.getElementById('listaTarefas')
+    const tarefas = ["Estudar JavaScript", "Comprar ração para calopsita", "Limpar a cozinha", "Lavar o carro"]
+
+    tarefas.map((elem) =>{
+      const tarefaLi = document.createElement('li')
+      tarefaLi.textContent = elem
+      listaTarefas.appendChild(tarefaLi)
+    })
+  </script>
+</body>
+</html>
