@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 2.4</title>
+</head>
+
+<body>
+  <h1>Botão de Limpar Lista</h1>
+  <ol id="ranking">
+    <li>1º Lugar</li>
+    <li>2º Lugar</li>
+  </ol>
+  <button id="btnLimpar">Limpar</button>
+  <script>
+    const btnLimpar = document.getElementById('btnLimpar')
+    
+    btnLimpar.addEventListener('click', ()=>{
+      const ranking = document.getElementById('ranking')
+      ranking.removeChild(ranking.firstElementChild)
+    })
+  </script>
+</body>
+
+</html>

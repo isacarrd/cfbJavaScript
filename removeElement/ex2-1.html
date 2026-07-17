@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 2.1</title>
+</head>
+<body>
+  <h1>Apagando um Item Específico</h1>
+  <ul id="menu">
+    <li id="item-1">Home</li>
+    <li id="item-2">Contato</li>
+  </ul>
+  <script>
+    const menu = document.getElementById('menu')
+    const item2 = document.getElementById('item-2')
+
+    menu.removeChild(item2)
+  </script>
+</body>
+</html>
