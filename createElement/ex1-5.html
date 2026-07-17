@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 1.5</title>
+</head>
+<body>
+  <h1>Construindo um Mini-Card (Aninhamento)</h1>
+  <article id="cardUsuario"></article>
+  <script>
+    const cardUsuario = document.getElementById('cardUsuario')
+    const h2 = document.createElement('h2')
+    const ph = document.createElement('p')
+
+    h2.innerText = "Geralt de Rivia"
+    ph.innerText = "Personagem de The Witcher"
+    cardUsuario.appendChild(h2)
+    cardUsuario.appendChild(ph)
+  </script>
+</body>
+</html>
