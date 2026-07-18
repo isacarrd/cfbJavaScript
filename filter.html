@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    main{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+    }
+    #acaoCursos {
+      width: 200px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      background-color: rgb(186, 186, 186);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #caixaCursos {
+      width: 200px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      background-color: rgb(186, 186, 186);
+    }
+
+    .cursos {
+      display: flex;
+      justify-content: space-between;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #563e9f;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="acaoCursos">
+      <div id="criarCurso">
+        <label for="nomeCurso">Nome do curso:</label>
+        <input type="text" name="nomeCurso" id="nomeCurso" placeholder="Nome do curso">
+        <button>Adicionar curso</button>
+      </div>
+      <button>Remover selecionado</button>
+      <button id="cursoSelecionado">Curso selecionado</button>
+    </div>
+    <div id="caixaCursos"></div>
+  </main>
+</body>
+<script>
+  const cursos = ['HTML', 'NodeJS', 'CSS', 'React', 'JavaScript', 'PHP', 'Java', 'C', 'Python']
+
+  const caixaCursos = document.getElementById('caixaCursos')
+  cursos.map((element, index) => {
+    const cursoCard = document.createElement('div')
+    cursoCard.setAttribute('class', 'cursos')
+    cursoCard.setAttribute('id', 'c'+index)
+    cursoCard.innerText = element
+    
+    const select = document.createElement('div')
+    
+    const botaoSelect = document.createElement('input')
+    botaoSelect.setAttribute('type', 'radio')
+    botaoSelect.setAttribute('name', 'botaoSelect')
+    
+    caixaCursos.appendChild(cursoCard)
+    cursoCard.appendChild(select)
+    select.appendChild(botaoSelect)
+  })
+
+const btnSelecionado = document.getElementById('cursoSelecionado')
+  btnSelecionado.addEventListener('click', (evt)=>{
+    const cursosSelecionados = [...document.querySelectorAll('input[type=radio]')]
+    let todosSelecionados = cursosSelecionados.filter((ele) =>{
+      return ele.checked
+    })
+    todosSelecionados = todosSelecionados[0]
+    const elementoSelecionado = todosSelecionados.parentNode.parentNode.innerText
+    console.log(elementoSelecionado)
+    alert('Curso selecionado: ' + elementoSelecionado)
+  })
+
+
+</script>
+
+</html>
