@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 4.4</title>
+</head>
+<body>
+  <h1>Removendo Elementos por Classe (NodeList)</h1>
+  <p class="anuncio">Compre agora</p>
+  <p class="conteudo">Notícia real</p>
+  <p class="anuncio">Promoção</p>
+  <script>
+    const anuncio = [...document.querySelectorAll('.anuncio')]
+    console.log(anuncio)
+    anuncio.forEach((phAnuncio) => phAnuncio.remove())
+  </script>
+</body>
+</html>

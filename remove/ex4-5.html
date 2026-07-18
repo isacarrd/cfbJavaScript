@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 4.5</title>
+</head>
+<body>
+  <h1>Delegação com .target e .remove()</h1>
+  <ul id="listaClicavel">
+    <li>Item A</li>
+    <li>Item B</li>
+  </ul>
+  <script>
+    const listaClique = document.getElementById('listaClicavel')
+    listaClique.addEventListener('click', (evt)=>{
+      console.log(evt.target.tagName)
+      if(evt.target.tagName == "LI"){
+        evt.target.remove()
+      } else{
+        alert('Não')
+      }
+    })
+  </script>
+</body>
+</html>
