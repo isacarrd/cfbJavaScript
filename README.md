@@ -802,3 +802,117 @@ Use `.filter()` para retornar apenas os objetos que possuem `qtd` maior que 0.
 * **Resposta Esperada:** `true`
 
 ---
+
+### Método `.reduce()`
+
+**Exercício 1.1: O Fechamento de Caixa**
+
+* **Situação Problema:** Você tem uma lista de vendas diárias: `[{ id: 1, valor: 150.50, cancelada: false }, { id: 2, valor: 300.00, cancelada: true }, { id: 3, valor: 50.25, cancelada: false }]`. Use a lógica de redução para calcular o faturamento total do dia, ignorando as vendas que foram canceladas.
+* **Resposta Esperada:** `200.75`
+
+**Exercício 1.2: Agrupador de Produtos**
+
+* **Situação Problema:** O back-end enviou uma lista de produtos: `[{ nome: "Mouse", setor: "TI" }, { nome: "Caderno", setor: "Papelaria" }, { nome: "Teclado", setor: "TI" }]`. Reduza esse array a um **único objeto** onde as chaves sejam os setores, e os valores sejam arrays contendo apenas os nomes dos produtos daquele setor.
+* **Resposta Esperada:** `{ TI: ["Mouse", "Teclado"], Papelaria: ["Caderno"] }`
+
+**Exercício 1.3: Apurador de Votos**
+
+* **Situação Problema:** Em uma enquete, os votos foram registrados em um array de strings: `["React", "Vue", "Angular", "React", "React", "Vue"]`. Descubra a frequência de cada voto usando redução, construindo um objeto que conte as ocorrências automaticamente, sem conhecer os nomes das opções previamente.
+* **Resposta Esperada:** `{ React: 3, Vue: 2, Angular: 1 }`
+
+**Exercício 1.4: O Maior Salário (Comparação Acumulada)**
+
+* **Situação Problema:** Dada uma equipe: `[{ nome: "Ana", salario: 4500 }, { nome: "Carlos", salario: 6000 }, { nome: "Bia", salario: 5200 }]`. Use a redução não para somar, mas para reter e retornar **apenas o objeto inteiro** do funcionário que possui o maior salário.
+* **Resposta Esperada:** `{ nome: "Carlos", salario: 6000 }`
+
+**Exercício 1.5: Planificando o Estoque**
+
+* **Situação Problema:** O estoque foi organizado por galpões (arrays dentro de um array): `[[10, 20], [30, 40], [50, 60]]`. Transforme isso em um único array nivelado (apenas uma dimensão) e, na mesma operação (ou em uma redução encadeada), some todos os valores para obter a quantidade total de itens globais.
+* **Resposta Esperada:** `210`
+
+---
+
+### Iteradores e Elementos Iteráveis
+
+**Exercício 2.1: Inversor Sem Array**
+
+* **Situação Problema:** Dada a string `"JAVASCRIPT"`. Sabendo que strings são iteráveis, utilize um loop `for...of` para construir uma nova string com as letras invertidas, sem utilizar os métodos `.split()`, `.reverse()` ou `.join()`.
+* **Resposta Esperada:** `"TPIRCSAVAJ"`
+
+**Exercício 2.2: O Purificador de Dados**
+
+* **Situação Problema:** Você recebeu um array poluído com duplicatas: `[1, 2, 2, 3, 4, 4, 5]`. Sabendo que a coleção `Set` é iterável e não aceita repetições, utilize a sintaxe de propagação (Spread) junto com o `Set` para criar e retornar um novo array purificado em uma única linha de código.
+* **Resposta Esperada:** `[1, 2, 3, 4, 5]`
+
+**Exercício 2.3: O Gerador de Paginação (`function*`)**
+
+* **Situação Problema:** Crie uma função geradora que receba um array `[1, 2, 3, 4, 5]` e um tamanho de página `2`. A cada iteração (chamada do `next()`), o gerador deve retornar uma fatia do array correspondente à página (`[1, 2]`, depois `[3, 4]`, depois `[5]`).
+* **Resposta Esperada:** Execuções sequenciais retornam os blocos do array até finalizar.
+
+**Exercício 2.4: O Objeto Customizado Iterável**
+
+* **Situação Problema:** Crie um objeto `playlist = { musicas: ["Track 1", "Track 2", "Track 3"] }`. Objetos puros não aceitam `for...of`. Implemente manualmente o método `[Symbol.iterator]` dentro deste objeto para que um loop `for...of` feito **diretamente no objeto playlist** imprima o nome de cada música no console.
+* **Resposta Esperada:** O `for...of` roda sem disparar o erro "playlist is not iterable".
+
+**Exercício 2.5: Fusão de Iteráveis Heterogêneos**
+
+* **Situação Problema:** Você tem uma `NodeList` capturada do DOM (ex: `document.querySelectorAll('p')`) e um array comum de strings `["Texto extra"]`. Transforme ambos em iteráveis puros e funda-os em um único array usando apenas a sintaxe de propagação (`...`).
+* **Resposta Esperada:** Um array contendo os elementos HTML reais e a string no final.
+
+---
+
+### Array + Arrays com Funções
+
+**Exercício 3.1: A Linha de Produção (Pipeline)**
+
+* **Situação Problema:** Crie um array contendo três funções matemáticas simples: uma que soma 10, uma que multiplica por 2 e uma que subtrai 5. Crie um número inicial `valor = 5`. Crie uma lógica que percorra o array, passando o valor atualizado para a próxima função da fila, gerando um resultado final.
+* **Resposta Esperada:** `25` (pois 5+10=15; 15*2=30; 30-5=25).
+
+**Exercício 3.2: O Motor de Validação**
+
+* **Situação Problema:** Crie um array de regras para validar uma senha (cada regra é uma função que retorna `true` ou `false`). Regra 1: ter mais de 6 caracteres. Regra 2: não conter espaços. Dada a senha `"senha forte"`, percorra o array de funções. Se todas retornarem `true`, retorne "Aprovada". Se alguma falhar, retorne "Recusada".
+* **Resposta Esperada:** `"Recusada"` (falha na regra do espaço).
+
+**Exercício 3.3: Despachante Aleatório**
+
+* **Situação Problema:** Crie um array com quatro funções, cada uma responsável por imprimir um feitiço diferente (ex: "Fogo!", "Gelo!", "Raio!", "Cura!"). Escreva um script que gere um número aleatório correspondente aos índices do array e execute a função sorteada instantaneamente.
+* **Resposta Esperada:** O console imprime um feitiço aleatório a cada execução.
+
+**Exercício 3.4: Ações Condicionais em Lote**
+
+* **Situação Problema:** Crie um array de objetos onde cada objeto tem um `id` e uma função `executar()`. Crie uma lista separada de `idsPermitidos = [2, 3]`. Varra o array de objetos e dispare a função `executar()` **apenas** dos objetos cujos IDs estejam na lista de permitidos.
+* **Resposta Esperada:** Apenas as funções dos objetos 2 e 3 são acionadas.
+
+**Exercício 3.5: Transformação em Matriz (Array 2D)**
+
+* **Situação Problema:** Dado o tabuleiro de um jogo `[[1, 0, 1], [0, 2, 0], [1, 0, 1]]`. Construa uma lógica (provavelmente com iterações aninhadas) que acesse cada número. Se o número for `0`, substitua por `"vazio"`. Retorne a matriz alterada.
+* **Resposta Esperada:** `[[1, "vazio", 1], ["vazio", 2, "vazio"], [1, "vazio", 1]]`
+
+---
+
+### Coleção `Map` (O Objeto, não o método)
+
+**Exercício 4.1: O Dicionário Bilíngue**
+
+* **Situação Problema:** Instancie um novo objeto `Map`. Adicione três pares de chave/valor simulando um dicionário de inglês para português (ex: chave "Apple", valor "Maçã"). Em seguida, valide se a palavra "Dog" existe na coleção e, se existir, recupere e imprima a sua tradução.
+* **Resposta Esperada:** Impressão da tradução caso a chave seja inserida, ou nada caso a chave não exista.
+
+**Exercício 4.2: Referência de Metadados (Objetos como Chave)**
+
+* **Situação Problema:** Crie dois objetos que representem usuários (ex: `user1 = { id: 10 }`, `user2 = { id: 20 }`). O grande poder do `Map` é usar objetos como chave (coisa que o objeto literal padrão não faz bem). Crie um `Map`, defina `user1` como chave contendo o valor `"Administrador"` e `user2` como chave com o valor `"Convidado"`. Recupere o perfil do `user1`.
+* **Resposta Esperada:** `"Administrador"`
+
+**Exercício 4.3: Contador de Frequência Otimizado**
+
+* **Situação Problema:** Dada a string `"banana"`. Utilize um `Map` vazio. Percorra a string e verifique: se a letra não existe no `Map`, insira-a com o valor 1. Se já existe, recupere o valor atual, some 1 e atualize no `Map`. Imprima o `Map` final.
+* **Resposta Esperada:** Um `Map` com as entradas `{'b' => 1, 'a' => 3, 'n' => 2}`.
+
+**Exercício 4.4: Conversor de Sistema (`Map` para Array)**
+
+* **Situação Problema:** Um módulo do seu sistema gerou um `Map` contendo configurações: `Map { 'tema' => 'escuro', 'idioma' => 'pt-BR' }`. No entanto, a API que vai receber isso exige um array de matrizes. Converta essa coleção `Map` em um array no formato `[[chave, valor], [chave, valor]]`.
+* **Resposta Esperada:** `[['tema', 'escuro'], ['idioma', 'pt-BR']]`
+
+**Exercício 4.5: Sistema de Cache Simples (Memoization)**
+
+* **Situação Problema:** Instancie um `Map` chamado `cache`. Escreva uma função que simula um cálculo demorado (ex: multiplicar um número por ele mesmo). Dentro da função, verifique se o número solicitado já existe como chave no `Map`. Se existir, retorne o valor do `Map` dizendo "Recuperado do cache". Se não existir, faça a conta, salve no `Map` e retorne "Calculado agora".
+* **Resposta Esperada:** A primeira vez que chamar `funcao(5)` dirá "Calculado agora: 25". A segunda vez que chamar `funcao(5)` dirá "Recuperado do cache: 25".
