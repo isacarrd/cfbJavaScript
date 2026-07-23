@@ -699,3 +699,106 @@ Use `.filter()` para retornar apenas os objetos que possuem `qtd` maior que 0.
 * **Situação Problema:** Crie uma `<ul id="lista-clicavel"><li>Item A</li><li>Item B</li></ul>`. Adicione um evento de clique na `ul`. Dentro do evento, verifique se o que foi clicado (`event.target.tagName`) foi uma `"LI"`. Se sim, aplique `.remove()` diretamente no `event.target`. *(Esta é uma técnica avançada e muito útil!)*
 * **Ação:** Clicar na palavra "Item A".
 * **Resposta Esperada:** Apenas o "Item A" some da tela. A `ul` continua existindo para receber novos cliques.
+
+---
+### Método `.toggle()` (`classList.toggle`)
+
+**Exercício 1.1: O Clássico Dark Mode**
+
+* **Situação Problema:** Crie um `<button id="btn-tema">Alternar Tema</button>`. No JS, capture o botão e o `document.body`. Adicione um evento de clique ao botão que utilize o método `.toggle()` para alternar a classe CSS `"dark-mode"` no `body`. *(Dica: você não precisa criar o CSS completo, basta ver a classe aparecendo e sumindo no inspecionador de elementos).*
+* **Teste:** Clicar no botão repetidas vezes.
+* **Resposta Esperada:** A tag `<body>` ganha a classe `dark-mode` no primeiro clique e a perde no segundo clique, sucessivamente.
+
+**Exercício 1.2: Menu Hambúrguer (Expandir/Recolher)**
+
+* **Situação Problema:** Crie um botão `<button id="btn-menu">Menu</button>` e uma `<nav id="navegacao" class="escondido"><ul><li>Home</li></ul></nav>`. Ao clicar no botão do menu, use o `.toggle()` na tag `<nav>` para alternar a classe `"escondido"`.
+* **Teste:** Clicar no botão Menu.
+* **Resposta Esperada:** A classe `"escondido"` é removida e recolocada no elemento `<nav>` a cada clique.
+
+**Exercício 1.3: Botão de Curtir (Like)**
+
+* **Situação Problema:** Crie um botão `<button id="btn-like">Coração</button>`. Crie um evento de clique onde o `.toggle()` adiciona ou remove a classe `"curtido"` do próprio botão. Para validar, imprima no console `"Status alterado"`.
+* **Teste:** Clicar no botão Coração.
+* **Resposta Esperada:** O botão alterna a classe `"curtido"` e o console registra a ação.
+
+**Exercício 1.4: Acordeão (FAQ Simples)**
+
+* **Situação Problema:** Crie um `<h3 id="pergunta">O que é JS?</h3>` e um `<p id="resposta">É uma linguagem de programação.</p>`. Ao clicar na pergunta (o `h3`), o parágrafo da resposta deve sofrer um `.toggle()` da classe `"aberto"`.
+* **Teste:** Clicar em cima da tag `h3`.
+* **Resposta Esperada:** A tag `<p>` recebe e perde a classe `"aberto"`.
+
+**Exercício 1.5: Alternância com Força Bruta (Booleano)**
+
+* **Situação Problema:** O método `.toggle()` aceita um segundo parâmetro opcional (um booleano) que força a classe a ser adicionada (`true`) ou removida (`false`). Crie uma `<div id="status"></div>`. No JS, aplique `divStatus.classList.toggle("ativo", 10 > 5)`.
+* **Teste:** Inspecionar o HTML resultante.
+* **Resposta Esperada:** A div terá a classe `"ativo"`, pois a condição `10 > 5` resulta em `true`, forçando a adição da classe.
+
+---
+
+### Método `.find()`
+
+**Exercício 2.1: Busca por ID Único**
+
+* **Situação Problema:** Dado o array de objetos `const usuarios = [{id: 1, nome: "Alice"}, {id: 2, nome: "Bob"}, {id: 3, nome: "Carlos"}]`. Use o `.find()` para encontrar e retornar o objeto inteiro do usuário que possui o `id` igual a 2.
+* **Teste:** Imprimir o resultado da busca.
+* **Resposta Esperada:** `{id: 2, nome: "Bob"}`
+
+**Exercício 2.2: O Primeiro Produto Esgotado**
+
+* **Situação Problema:** Dado o estoque `const produtos = [{nome: "Teclado", qtd: 5}, {nome: "Mouse", qtd: 0}, {nome: "Monitor", qtd: 0}]`. Use o `.find()` para retornar o **primeiro** produto que esteja com a quantidade (`qtd`) igual a 0.
+* **Teste:** Imprimir o resultado.
+* **Resposta Esperada:** `{nome: "Mouse", qtd: 0}`
+
+**Exercício 2.3: Buscando por Domínio de Email**
+
+* **Situação Problema:** Dado o array `const emails = ["user@gmail.com", "admin@empresa.com", "rh@empresa.com"]`. Use o `.find()` com o método `.includes()` das strings para encontrar o primeiro email que contenha o trecho `"@empresa.com"`.
+* **Teste:** Imprimir o resultado.
+* **Resposta Esperada:** `"admin@empresa.com"`
+
+**Exercício 2.4: Limite de Temperatura**
+
+* **Situação Problema:** Dado o array de temperaturas de uma máquina `const temperaturas = [35, 42, 50, 85, 90, 40]`. Use o `.find()` para descobrir a primeira vez que a temperatura ultrapassou o nível crítico de alerta, ou seja, buscar o primeiro valor maior que 80.
+* **Teste:** Imprimir o resultado.
+* **Resposta Esperada:** `85`
+
+**Exercício 2.5: Busca Inexistente (Comportamento Padrão)**
+
+* **Situação Problema:** Dado o array `const tarefas = ["Estudar", "Treinar", "Ler"]`. Use o `.find()` para procurar a tarefa `"Dormir"`. Salve o resultado em uma variável e imprima essa variável para observar o que o JavaScript retorna quando o `.find()` não acha nada.
+* **Teste:** Imprimir a variável da busca.
+* **Resposta Esperada:** `undefined`
+
+---
+
+### Método `.every()`
+
+**Exercício 3.1: Validação de Maioridade em Grupo**
+
+* **Situação Problema:** Um grupo tenta entrar em um evento restrito. Dado o array de idades `const idades = [22, 25, 19, 30]`, use o `.every()` para verificar se **todas** as pessoas têm 18 anos ou mais.
+* **Teste:** Imprimir o resultado booleano.
+* **Resposta Esperada:** `true`
+
+**Exercício 3.2: Formulário Totalmente Preenchido**
+
+* **Situação Problema:** Dado um array com os valores dos campos de um formulário `const campos = ["Maria", "maria@email.com", "123456", ""]`. Use o `.every()` para verificar se todos os campos estão preenchidos (ou seja, se todos os campos são diferentes de uma string vazia `""`).
+* **Teste:** Imprimir o resultado.
+* **Resposta Esperada:** `false` (devido ao último campo estar vazio).
+
+**Exercício 3.3: Verificação de Estoque Completo**
+
+* **Situação Problema:** Dado o array `const inventario = [{item: "A", estoque: 10}, {item: "B", estoque: 5}]`. Use o `.every()` para checar se todos os objetos da lista possuem `estoque` maior que zero.
+* **Teste:** Imprimir o resultado.
+* **Resposta Esperada:** `true`
+
+**Exercício 3.4: Sistema de Permissões**
+
+* **Situação Problema:** Dado o array `const usuariosAtivos = [{nome: "Ana", admin: true}, {nome: "Leo", admin: false}]`. Use o `.every()` para verificar se todos os usuários dessa lista são administradores (`admin === true`).
+* **Teste:** Imprimir o resultado.
+* **Resposta Esperada:** `false`
+
+**Exercício 3.5: A Pegadinha do Array Vazio**
+
+* **Situação Problema:** Crie um array vazio `const pendencias = []`. Use o `.every()` para verificar se os itens (mesmo não existindo nenhum) são maiores que 10. *Isso é um conceito matemático chamado "Vacuous truth" (Verdade Vacilante) adotado pelo JavaScript.*
+* **Teste:** `console.log(pendencias.every(num => num > 10))`
+* **Resposta Esperada:** `true`
+
+---
