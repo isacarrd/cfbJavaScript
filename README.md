@@ -849,16 +849,6 @@ Use `.filter()` para retornar apenas os objetos que possuem `qtd` maior que 0.
 * **Situação Problema:** Crie uma função geradora que receba um array `[1, 2, 3, 4, 5]` e um tamanho de página `2`. A cada iteração (chamada do `next()`), o gerador deve retornar uma fatia do array correspondente à página (`[1, 2]`, depois `[3, 4]`, depois `[5]`).
 * **Resposta Esperada:** Execuções sequenciais retornam os blocos do array até finalizar.
 
-**Exercício 2.4: O Objeto Customizado Iterável**
-
-* **Situação Problema:** Crie um objeto `playlist = { musicas: ["Track 1", "Track 2", "Track 3"] }`. Objetos puros não aceitam `for...of`. Implemente manualmente o método `[Symbol.iterator]` dentro deste objeto para que um loop `for...of` feito **diretamente no objeto playlist** imprima o nome de cada música no console.
-* **Resposta Esperada:** O `for...of` roda sem disparar o erro "playlist is not iterable".
-
-**Exercício 2.5: Fusão de Iteráveis Heterogêneos**
-
-* **Situação Problema:** Você tem uma `NodeList` capturada do DOM (ex: `document.querySelectorAll('p')`) e um array comum de strings `["Texto extra"]`. Transforme ambos em iteráveis puros e funda-os em um único array usando apenas a sintaxe de propagação (`...`).
-* **Resposta Esperada:** Um array contendo os elementos HTML reais e a string no final.
-
 ---
 
 ### Array + Arrays com Funções
