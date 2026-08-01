@@ -38,6 +38,7 @@ const regras = [
     return !password.includes(" ")
   }
 ]
+  // GEMINI: podia usar um .every() pra resumir automaticamente
 if (regras[0](senha) && regras[1](senha)) {
   console.log("Aprovada")
   return true

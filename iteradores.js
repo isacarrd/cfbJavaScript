@@ -9,7 +9,9 @@ console.log(novaString.toString().replaceAll(',', '')) */
 
 /* // Exercício 2.2: O Purificador de Dados
 const arraySujo = [1, 2, 2, 3, 4, 4, 5]
-const arrayPolido = new Set([1, 2, 2, 3, 4, 4, 5]) // Ué onde entra o spread? Não vi sentidokkk
+// const arrayPolido = new Set([1, 2, 2, 3, 4, 4, 5]) // Ué onde entra o spread? Não vi sentidokkk
+// correção do gemini:
+const arrayPolido = [...new Set(arraySujo)]
 console.log(arrayPolido) */
 
 /* // Exercício 2.3: O Gerador de Paginação (function*)
