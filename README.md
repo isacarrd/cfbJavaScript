@@ -906,3 +906,99 @@ Use `.filter()` para retornar apenas os objetos que possuem `qtd` maior que 0.
 
 * **Situação Problema:** Instancie um `Map` chamado `cache`. Escreva uma função que simula um cálculo demorado (ex: multiplicar um número por ele mesmo). Dentro da função, verifique se o número solicitado já existe como chave no `Map`. Se existir, retorne o valor do `Map` dizendo "Recuperado do cache". Se não existir, faça a conta, salve no `Map` e retorne "Calculado agora".
 * **Resposta Esperada:** A primeira vez que chamar `funcao(5)` dirá "Calculado agora: 25". A segunda vez que chamar `funcao(5)` dirá "Recuperado do cache: 25".
+
+---
+
+### Método `.some()` (Avançado)
+
+**Exercício 1.1: Controle de Acesso VIP**
+
+* **Situação Problema:** Você tem os dados do usuário atual: `usuario = { nome: "Lucas", nivel: "membro" }`. E um array de permissões exigidas para acessar uma página: `acessosPermitidos = ["admin", "moderador", "vip"]`. Use o `.some()` para verificar se o `nivel` do usuário está dentro da lista de permissões.
+* **Resposta Esperada:** `false` (Acesso negado).
+
+**Exercício 1.2: Alerta de Estoque Crítico**
+
+* **Situação Problema:** O banco de dados retornou o estoque: `[{ nome: "Placa de Vídeo", qtd: 15, min: 10 }, { nome: "Processador", qtd: 4, min: 5 }, { nome: "Memória", qtd: 20, min: 10 }]`. Descubra se **existe algum** produto cujo estoque atual (`qtd`) esteja abaixo do estoque mínimo exigido (`min`).
+* **Resposta Esperada:** `true` (O processador ativaria o alerta).
+
+**Exercício 1.3: Validação de Formulário Dinâmico**
+
+* **Situação Problema:** Você tem um array representando campos de um formulário: `[{ campo: "nome", valor: "Ana", obrigatorio: true }, { campo: "telefone", valor: "", obrigatorio: false }, { campo: "email", valor: "", obrigatorio: true }]`. Verifique se o usuário deixou em branco (`valor === ""`) algum campo que seja estritamente obrigatório.
+* **Resposta Esperada:** `true` (O email está vazio e é obrigatório, impedindo o envio).
+
+**Exercício 1.4: Busca de Termos Proibidos**
+
+* **Situação Problema:** Em um chat escolar, você tem a mensagem do aluno: `mensagem = "O professor passou um trabalho idiota hoje"`. Você também tem um array de palavras bloqueadas: `palavroes = ["merda", "idiota", "burro"]`. Transforme a mensagem em um array (usando `.split(' ')`) e use o `.some()` para checar se a mensagem contém alguma ofensa.
+* **Resposta Esperada:** `true`.
+
+**Exercício 1.5: Conflito de Horários na Agenda**
+
+* **Situação Problema:** A agenda do médico possui consultas: `[{ inicio: 9, fim: 10 }, { inicio: 13, fim: 14 }]`. Um paciente quer marcar uma consulta onde a variável `novoInicio = 13` e `novoFim = 14`. Verifique se o novo horário colide com alguma das marcações existentes. *(Dica de lógica: colide se o novo início for igual a algum início já existente, por exemplo).*
+* **Resposta Esperada:** `true` (Horário indisponível).
+
+---
+
+### Coleção `Set`
+
+**Exercício 2.1: Sistema de Tags Limpo**
+
+* **Situação Problema:** Os usuários preencheram as tags de um post, mas digitaram várias repetidas: `["javascript", "html", "css", "javascript", "react", "html"]`. Use a coleção `Set` (e o *Spread Operator*, como vimos na lista 7) para criar um novo array contendo apenas as tags únicas, sem repetição.
+* **Resposta Esperada:** `["javascript", "html", "css", "react"]`.
+
+**Exercício 2.2: Contagem de Letras Únicas**
+
+* **Situação Problema:** Você precisa criar um algoritmo para um jogo de forca. Dada a palavra `"PARALELEPIPEDO"`, descubra exatamente quantas letras **diferentes** existem nessa palavra usando o tamanho (`.size`) de um `Set`.
+* **Resposta Esperada:** `9`.
+
+**Exercício 2.3: Interseção de Amizades (Match)**
+
+* **Situação Problema:** O `userA` tem os seguintes seguidores: `["Bia", "Carlos", "Daniel", "Ester"]`. O `userB` tem: `["Carlos", "Ester", "Felipe", "Bia"]`. Transforme o array do `userA` em um `Set` por questões de performance e, em seguida, faça um `.filter()` no array do `userB` para retornar apenas os nomes que eles têm em comum (interseção). *(Dica: Use o método `.has()` do Set)*.
+* **Resposta Esperada:** `["Carlos", "Ester", "Bia"]`.
+
+**Exercício 2.4: O Sorteio Justo**
+
+* **Situação Problema:** Você precisa sortear 5 números aleatórios de 1 a 10 para uma rifa. Crie um `Set` vazio. Faça um loop `while` que gere um número aleatório e adicione ao `Set`. O loop só deve parar quando o `Set` tiver exatamente 5 itens. *(Isso garante que, se o código sortear um número repetido, o `Set` vai ignorá-lo e o loop continuará rodando até ter 5 números únicos).*
+* **Resposta Esperada:** Um `Set` ou `Array` com 5 números diferentes entre si (ex: `[2, 7, 4, 10, 1]`).
+
+**Exercício 2.5: Visitantes do Final de Semana**
+
+* **Situação Problema:** Você registrou os IPs de acesso do Sábado `["IP-1", "IP-2", "IP-3"]` e do Domingo `["IP-2", "IP-3", "IP-4", "IP-5"]`. Combine os dois arrays em um só e passe o resultado para um `Set` para descobrir a lista definitiva de IPs únicos que visitaram o site no fim de semana.
+* **Resposta Esperada:** `["IP-1", "IP-2", "IP-3", "IP-4", "IP-5"]`.
+
+---
+
+### Template Strings (```)
+
+**Exercício 3.1: Formatador de Endereços**
+
+* **Situação Problema:** Dado o objeto `const cliente = { rua: "Av. Paulista", numero: 1000, cidade: "São Paulo" }`. Crie uma única Template String que resulte no texto completo do endereço.
+* **Resposta Esperada:** `"Endereço de entrega: Av. Paulista, nº 1000 - São Paulo"`.
+
+**Exercício 3.2: Lógica Condicional Embutida (Ternário)**
+
+* **Situação Problema:** Dado o objeto `fatura = { id: 405, status: "paga" }`. Escreva uma Template String que imprima o ID da fatura, e utilize um Operador Ternário **dentro** da própria string (dentro do `${...}`) para imprimir a palavra `"CONCLUÍDO"` se o status for "paga", ou `"PENDENTE"` caso não seja.
+* **Resposta Esperada:** `"Fatura 405: CONCLUÍDO"`.
+
+**Exercício 3.3: Executando Funções na Interpolação**
+
+* **Situação Problema:** Crie uma função simples `aplicarDesconto(preco)` que receba um valor, tire 10% dele e retorne o resultado. Em seguida, crie a variável `valor = 200`. Crie uma Template String que chame essa função diretamente dentro dela para exibir o valor final.
+* **Resposta Esperada:** `"Preço original: R$200. Preço com desconto: R$180."`.
+
+**Exercício 3.4: Construindo HTML Dinâmico Multi-linhas**
+
+* **Situação Problema:** Crie um objeto de postagem: `post = { titulo: "Aprendendo JS", autor: "Admin", likes: 15 }`. Construa uma Template String que simule a criação de um cartão em HTML, utilizando quebras de linha reais no seu código (sem usar `\n`).
+* **Resposta Esperada:** (A impressão no console deve respeitar os espaços visuais do HTML abaixo):
+
+```html
+<article>
+  <h2>Aprendendo JS</h2>
+  <p>Escrito por: Admin</p>
+  <span>15 curtidas</span>
+</article>
+
+```
+**Exercício 3.5: O Desafio da Renderização de Listas**
+
+* **Situação Problema:** Você tem uma lista de compras: `const itens = ["Arroz", "Feijão", "Carne"]`. Usando uma Template String, construa uma estrutura HTML `<ul>`. Dentro do `${...}`, utilize os métodos de array `.map()` e `.join('')` no array de itens para gerar dinamicamente as tags `<li>` para cada produto.
+* **Resposta Esperada:** O resultado no console será exatamente a string formatada:
+`"<ul><li>Arroz</li><li>Feijão</li><li>Carne</li></ul>"`.
