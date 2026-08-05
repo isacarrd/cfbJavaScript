@@ -948,7 +948,7 @@ Use `.filter()` para retornar apenas os objetos que possuem `qtd` maior que 0.
 **Exercício 2.2: Contagem de Letras Únicas**
 
 * **Situação Problema:** Você precisa criar um algoritmo para um jogo de forca. Dada a palavra `"PARALELEPIPEDO"`, descubra exatamente quantas letras **diferentes** existem nessa palavra usando o tamanho (`.size`) de um `Set`.
-* **Resposta Esperada:** `9`.
+* **Resposta Esperada:** `8`.
 
 **Exercício 2.3: Interseção de Amizades (Match)**
 
